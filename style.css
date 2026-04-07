@@ -10,13 +10,19 @@ h1 {
 
 #movies {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   padding: 20px;
 }
 
 #movies div {
-  background-color: red;
-  padding: 20px;
+  transition: transform 0.3s;
+}
+
+#movies div:hover {
+  transform: scale(1.1);
+}
+
+img {
+  width: 150px;
   border-radius: 5px;
-  cursor: pointer;
 }
