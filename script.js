@@ -1,30 +1,27 @@
-const movies = [
-  {
-    title: "Pushpa",
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    title: "RRR",
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    title: "KGF",
-    image: "https://via.placeholder.com/150"
-  }
-];
+const API_KEY = "c6be98929d674bd119c8ceacef331290";
+
 const container = document.getElementById("movies");
 
-movies.forEach(movie => {
-  const div = document.createElement("div");
+fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
+  .then(response => response.json())
+  .then(data => {
+    const movies = data.results;
 
-  const img = document.createElement("img");
-  img.src = movie.image;
+    movies.forEach(movie => {
+      const div = document.createElement("div");
 
-  const title = document.createElement("p");
-  title.innerText = movie.title;
+      const img = document.createElement("img");
+      img.src = "https://image.tmdb.org/t/p/w200" + movie.poster_path;
 
-  div.appendChild(img);
-  div.appendChild(title);
+      const title = document.createElement("p");
+      title.innerText = movie.title;
 
-  container.appendChild(div);
-});
+      div.appendChild(img);
+      div.appendChild(title);
+
+      container.appendChild(div);
+    });
+  })
+  .catch(error => {
+    console.error("Error fetching movies:", error);
+  });
