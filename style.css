@@ -1,21 +1,38 @@
 body {
   background-color: black;
   color: white;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   text-align: center;
+  margin-top: 20px;
+}
+
+#search {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 50%;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
 }
 
 #movies {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
 }
 
 #movies div {
   transition: transform 0.3s;
+  cursor: pointer;
+  text-align: center;
 }
 
 #movies div:hover {
@@ -25,4 +42,45 @@ h1 {
 img {
   width: 150px;
   border-radius: 5px;
+}
+/* Modal styling */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #111;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  color: white;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 200px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+#close-modal {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#close-modal:hover {
+  color: red;
 }

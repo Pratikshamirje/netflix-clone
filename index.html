@@ -6,8 +6,20 @@
 </head>
 <body>
   <h1>Netflix Clone</h1>
-
+  <input type="text" id="search" placeholder="Search for a movie..." />
   <div id="movies"></div>
+
+  <!-- Movie Details Modal -->
+  <div id="movie-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <img id="modal-img" src="" alt="Movie Poster">
+      <h2 id="modal-title"></h2>
+      <p id="modal-overview"></p>
+      <p><strong>Release Date:</strong> <span id="modal-release"></span></p>
+      <p><strong>Rating:</strong> <span id="modal-rating"></span>/10</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
