@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial;
+}
+
+#movies {
+  display: flex;
+  gap: 10px;
+}
